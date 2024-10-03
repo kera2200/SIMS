@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #66502a; /* Lightest color as the background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container, .control-container {
+    background-color: #043b4d; /* Darkest shade for containers */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+    color: #f6f1d1; /* Light color for text contrast */
+}
+h3 {
+    color: #f6f1d1; /* Light color for text contrast */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #cfd7c7; /* Light-medium shade for labels */
+}
+
+input[type="text"],input[type="password"], button {
+    width: 100%; /* Make input and buttons the same width */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #70a9a1; /* Medium shade for input borders */
+    background-color: #cfd7c7; /* Light-medium color for inputs */
+    color: #0b2027; /* Darker text color for contrast */
+    box-sizing: border-box; /* Ensures padding and borders are included in the total width */
+}
+
+button {
+    background-color: #40798c; /* Slightly darker shade for buttons */
+    color: #f6f1d1; /* Light color for button text */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #70a9a1; /* Lighter hover effect */
+}
+
+.command-section {
+    margin-top: 20px;
+}
+
+.map-section {
+    margin-top: 20px;
+}
+
+#error-message {
+    color: #40798c; /* Error message in the medium-dark color */
+    text-align: center;
+}
