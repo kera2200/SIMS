@@ -10,3 +10,4 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         document.getElementById('error-message').textContent = 'Invalid login credentials';
     }
 });
+
