@@ -1,0 +1,7 @@
+[console_scripts]
+turtlebot4_display_test_node = first_package.turtlebot4_display_test_node:main
+turtlebot4_first_python_node = first_package.turtlebot4_first_python_node:main
+turtlebot4_forward_node = first_package.turtlebot4_forward_node:main
+turtlebot4_frontiers_explore_test_node = first_package.turtlebot4_frontiers_explore_test_node:main
+turtlebot4_scan_test_node = first_package.turtlebot4_scan_test_node:main
+

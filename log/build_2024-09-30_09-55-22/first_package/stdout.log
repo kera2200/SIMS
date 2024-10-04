@@ -1,0 +1,27 @@
+running develop
+Removing /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first-package.egg-link (link to .)
+running egg_info
+writing ../../build/first_package/first_package.egg-info/PKG-INFO
+writing dependency_links to ../../build/first_package/first_package.egg-info/dependency_links.txt
+writing entry points to ../../build/first_package/first_package.egg-info/entry_points.txt
+writing requirements to ../../build/first_package/first_package.egg-info/requires.txt
+writing top-level names to ../../build/first_package/first_package.egg-info/top_level.txt
+reading manifest file '../../build/first_package/first_package.egg-info/SOURCES.txt'
+writing manifest file '../../build/first_package/first_package.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+creating /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package
+copying /home/turtle/turtlebot4_ws/build/first_package/build/lib/first_package/__init__.py -> /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package
+copying /home/turtle/turtlebot4_ws/build/first_package/build/lib/first_package/turtlebot4_first_python_node.py -> /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package
+byte-compiling /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package/turtlebot4_first_python_node.py to turtlebot4_first_python_node.cpython-310.pyc
+running install_data
+copying resource/first_package -> /home/turtle/turtlebot4_ws/install/first_package/share/ament_index/resource_index/packages
+copying package.xml -> /home/turtle/turtlebot4_ws/install/first_package/share/first_package
+running install_egg_info
+Copying ../../build/first_package/first_package.egg-info to /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first_package-0.0.0-py3.10.egg-info
+running install_scripts
+Installing turtlebot4_first_python_node script to /home/turtle/turtlebot4_ws/install/first_package/lib/first_package
+writing list of installed files to '/home/turtle/turtlebot4_ws/build/first_package/install.log'

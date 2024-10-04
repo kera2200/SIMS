@@ -1,0 +1,19 @@
+[0.393s] Invoking command in '/home/turtle/turtlebot4_ws/build/first_package': PYTHONPATH=/home/turtle/turtlebot4_ws/build/first_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/turtle/turtlebot4_ws/build/first_package/build --no-deps symlink_data
+[0.552s] running develop
+[0.641s] running egg_info
+[0.641s] writing first_package.egg-info/PKG-INFO
+[0.641s] writing dependency_links to first_package.egg-info/dependency_links.txt
+[0.641s] writing entry points to first_package.egg-info/entry_points.txt
+[0.641s] writing requirements to first_package.egg-info/requires.txt
+[0.641s] writing top-level names to first_package.egg-info/top_level.txt
+[0.642s] reading manifest file 'first_package.egg-info/SOURCES.txt'
+[0.643s] writing manifest file 'first_package.egg-info/SOURCES.txt'
+[0.644s] running build_ext
+[0.644s] Creating /home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages/first-package.egg-link (link to .)
+[0.645s] Installing turtlebot4_first_python_node script to /home/turtle/turtlebot4_ws/install/first_package/lib/first_package
+[0.645s] Installing turtlebot4_forward_node script to /home/turtle/turtlebot4_ws/install/first_package/lib/first_package
+[0.645s] Installing turtlebot4_scan_test_node script to /home/turtle/turtlebot4_ws/install/first_package/lib/first_package
+[0.645s] 
+[0.645s] Installed /home/turtle/turtlebot4_ws/build/first_package
+[0.645s] running symlink_data
+[0.662s] Invoked command in '/home/turtle/turtlebot4_ws/build/first_package' returned '0': PYTHONPATH=/home/turtle/turtlebot4_ws/build/first_package/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/turtle/turtlebot4_ws/install/first_package/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/turtle/turtlebot4_ws/build/first_package/build --no-deps symlink_data
