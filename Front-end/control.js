@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 
     // Initialize ROS connection using ROSLIB
     ros = new ROSLIB.Ros({
-        url: `ws://${robotIp}:9090`  // Connect to the ROSBridge WebSocket on the robot's IP
+        url: `wss://${robotIp}:9090`  // Connect to the ROSBridge WebSocket on the robot's IP
     });
 
     // ROS event handlers
