@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robot Control Panel</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/roslib"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/roslibjs/1.0.0/roslib.min.js"></script>
+
 </head>
 <body>
     <div class="control-container">
+        
         <h2>Office Robot Control</h2>
-        <div class="connection-section">
-            <label for="robot-ip">Robot IP Address:</label>
-            <input type="text" id="robot-ip" placeholder="Enter robot IP">
-            <button id="connect-btn">Connect</button>
-        </div>
         <div class="command-section">
             <button id="move-forward">Move Forward</button>
             <button id="move-backward">Move Backward</button>
             <button id="turn-left">Turn Left</button>
             <button id="turn-right">Turn Right</button>
             <button id="stop">Stop</button>
+            <button id="logout-btn">Logout</button>
         </div>
+        <!--
         <div class="map-section">
             <h3>Office Map</h3>
             <canvas id="office-map"></canvas>
         </div>
-        <button id="logout-btn">Logout</button>
+        -->
     </div>
     <script src="control.js"></script>
 </body>
