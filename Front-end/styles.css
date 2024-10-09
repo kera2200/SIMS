@@ -10,7 +10,7 @@ body {
 }
 
 .login-container, .control-container {
-    background-color: #043b4d; /* Darkest shade for containers */
+    background-color: #0b2027; /* Darkest shade for containers */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -22,9 +22,6 @@ h2 {
     text-align: center;
     color: #f6f1d1; /* Light color for text contrast */
 }
-h3 {
-    color: #f6f1d1; /* Light color for text contrast */
-}
 
 label {
     display: block;
@@ -32,7 +29,7 @@ label {
     color: #cfd7c7; /* Light-medium shade for labels */
 }
 
-input[type="text"],input[type="password"], button {
+input[type="text"], input[type="password"], button {
     width: 100%; /* Make input and buttons the same width */
     padding: 10px;
     margin: 5px 0;
@@ -42,6 +39,7 @@ input[type="text"],input[type="password"], button {
     color: #0b2027; /* Darker text color for contrast */
     box-sizing: border-box; /* Ensures padding and borders are included in the total width */
 }
+
 
 button {
     background-color: #40798c; /* Slightly darker shade for buttons */
