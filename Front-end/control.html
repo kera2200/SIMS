@@ -13,11 +13,11 @@
         
         <h2>Office Robot Control</h2>
         <div class="command-section">
-            <button onclick="sendCommand('forward')">Forward</button>
-            <button onclick="sendCommand('backward')">Backward</button>
-            <button onclick="sendCommand('left')">Left</button>
-            <button onclick="sendCommand('right')">Right</button>
-            <button onclick="sendCommand('stop')">Stop</button>
+            <button onmousedown="startContinuousCommand('forward')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Forward</button> 
+            <button onmousedown="startContinuousCommand('backward')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Backward</button>
+            <button onmousedown="startContinuousCommand('left')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Left</button>
+            <button onmousedown="startContinuousCommand('right')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Right</button>
+            <!--<button onclick="sendCommand('stop')">Stop</button>-->
             <button id="logout-btn">Logout</button>
         </div>
         <!--
