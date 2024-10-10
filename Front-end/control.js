@@ -1,5 +1,7 @@
 let ros;  // Declare the ROS connection object globally
 let cmdVel;  // Declare the ROS topic for robot commands globally
+let commandInterval;  // Declare a variable to hold the interval ID
+let keyPressed = {};  // Object to keep track of pressed keys
 
 // Automatically connect to the robot on page load
 window.addEventListener('load', function() {
@@ -30,15 +32,10 @@ window.addEventListener('load', function() {
     ros.on('close', function() {
         console.log('Connection to ROSBridge server closed.');
     });
-    
 });
-function sendCommand(direction) {
-    let cmdVel = new ROSLIB.Topic({
-        ros: ros,
-        name: '/turtle/cmd_vel',
-        messageType: 'geometry_msgs/Twist'
-    });
 
+// Function to send movement commands to the robot
+function sendCommand(direction) {
     let twist = new ROSLIB.Message({
         linear: { x: 0.0, y: 0.0, z: 0.0 },
         angular: { x: 0.0, y: 0.0, z: 0.0 }
@@ -58,31 +55,69 @@ function sendCommand(direction) {
             twist.angular.z = -0.5;
             break;
         case 'stop':
-            // Lämna twist som 0
+            // Leave twist as zero
             break;
     }
 
     cmdVel.publish(twist);
 }
 
+// Function to start sending commands at intervals
+function startContinuousCommand(direction) {
+    sendCommand(direction);  // Send the initial command immediately
+    commandInterval = setInterval(() => sendCommand(direction), 100);  // Send command every 100ms
+}
+
+// Function to stop sending commands
+function stopContinuousCommand() {
+    clearInterval(commandInterval);  // Stop the continuous command
+    sendCommand('stop');  // Stop the robot immediately
+}
+
+// Add event listeners for mouse button presses (onmousedown/onmouseup)
+document.querySelectorAll('.command-btn').forEach(button => {
+    const direction = button.getAttribute('data-command');
+    button.addEventListener('mousedown', () => startContinuousCommand(direction));
+    button.addEventListener('mouseup', stopContinuousCommand);
+    button.addEventListener('mouseleave', stopContinuousCommand);
+});
+
+// Add event listeners for keyboard presses (keydown/keyup)
+document.addEventListener('keydown', function(event) {
+    if (!keyPressed[event.key]) {
+        keyPressed[event.key] = true;
+        switch(event.key) {
+            case 'ArrowUp':
+                startContinuousCommand('forward');
+                break;
+            case 'ArrowDown':
+                startContinuousCommand('backward');
+                break;
+            case 'ArrowLeft':
+                startContinuousCommand('left');
+                break;
+            case 'ArrowRight':
+                startContinuousCommand('right');
+                break;
+        }
+    }
+});
+
+document.addEventListener('keyup', function(event) {
+    if (keyPressed[event.key]) {
+        keyPressed[event.key] = false;
+        switch(event.key) {
+            case 'ArrowUp':
+            case 'ArrowDown':
+            case 'ArrowLeft':
+            case 'ArrowRight':
+                stopContinuousCommand();
+                break;
+        }
+    }
+});
+
 // Event listener for the "Logout" button
 document.getElementById('logout-btn').addEventListener('click', function() {
     window.location.href = 'index.html';
-});
-
-// Commands map for controlling the robot
-
-// Event listeners for movement buttons
-Object.keys(commands).forEach(command => {
-    document.getElementById(command).addEventListener('click', function() {
-        if (!ros || !ros.isConnected) {
-            alert('Please connect to the robot first.');
-            return;
-        }
-
-        // Create and send the Twist message based on the command
-        const twist = new ROSLIB.Message(commands[command]);
-        cmdVel.publish(twist);
-        console.log(`Command sent: ${command}`);
-    });
 });
