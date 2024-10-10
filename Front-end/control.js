@@ -8,7 +8,7 @@ window.addEventListener('load', function() {
 
     // Initialize ROS connection using ROSLIB
     ros = new ROSLIB.Ros({
-        url: `wss://${robotIp}:9090`  // Connect to the ROSBridge WebSocket on the robot's IP
+        url: `ws://${robotIp}:9090`  // Connect to the ROSBridge WebSocket on the robot's IP
     });
 
     // ROS event handlers
@@ -30,7 +30,40 @@ window.addEventListener('load', function() {
     ros.on('close', function() {
         console.log('Connection to ROSBridge server closed.');
     });
+    
 });
+function sendCommand(direction) {
+    let cmdVel = new ROSLIB.Topic({
+        ros: ros,
+        name: '/turtle/cmd_vel',
+        messageType: 'geometry_msgs/Twist'
+    });
+
+    let twist = new ROSLIB.Message({
+        linear: { x: 0.0, y: 0.0, z: 0.0 },
+        angular: { x: 0.0, y: 0.0, z: 0.0 }
+    });
+
+    switch (direction) {
+        case 'forward':
+            twist.linear.x = 0.2;
+            break;
+        case 'backward':
+            twist.linear.x = -0.2;
+            break;
+        case 'left':
+            twist.angular.z = 0.5;
+            break;
+        case 'right':
+            twist.angular.z = -0.5;
+            break;
+        case 'stop':
+            // Lämna twist som 0
+            break;
+    }
+
+    cmdVel.publish(twist);
+}
 
 // Event listener for the "Logout" button
 document.getElementById('logout-btn').addEventListener('click', function() {
@@ -38,13 +71,6 @@ document.getElementById('logout-btn').addEventListener('click', function() {
 });
 
 // Commands map for controlling the robot
-const commands = {
-    'move-forward': { linear: { x: 0.2 }, angular: { z: 0 } },
-    'move-backward': { linear: { x: -0.2 }, angular: { z: 0 } },
-    'turn-left': { linear: { x: 0 }, angular: { z: 0.5 } },
-    'turn-right': { linear: { x: 0 }, angular: { z: -0.5 } },
-    'stop': { linear: { x: 0 }, angular: { z: 0 } }
-};
 
 // Event listeners for movement buttons
 Object.keys(commands).forEach(command => {
