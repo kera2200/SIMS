@@ -13,12 +13,11 @@
         
         <h2>Office Robot Control</h2>
         <div class="command-section">
-            <button id="move-forward">Move Forward</button>
-            <button id="move-backward">Move Backward</button>
-            <button id="turn-left">Turn Left</button>
-            <button id="turn-right">Turn Right</button>
-            <button id="stop">Stop</button>
-            <button id="logout-btn">Logout</button>
+            <button onclick="sendCommand('forward')">Forward</button>
+            <button onclick="sendCommand('backward')">Backward</button>
+            <button onclick="sendCommand('left')">Left</button>
+            <button onclick="sendCommand('right')">Right</button>
+            <button onclick="sendCommand('stop')">Stop</button>
         </div>
         <!--
         <div class="map-section">
