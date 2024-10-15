@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="control-container">
+        <h2>Office Robot Control</h2>
+        <div class="command-section">
+            <button onmousedown="startContinuousCommand('forward')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Forward</button>
+            <button onmousedown="startContinuousCommand('backward')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Backward</button>
+            <button onmousedown="startContinuousCommand('left')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Left</button>
+            <button onmousedown="startContinuousCommand('right')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Right</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='control.js') }}"></script>
+</body>
+</html>
