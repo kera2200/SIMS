@@ -14,7 +14,15 @@
             <button onmousedown="startContinuousCommand('backward')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Backward</button>
             <button onmousedown="startContinuousCommand('left')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Left</button>
             <button onmousedown="startContinuousCommand('right')" onmouseup="stopContinuousCommand()" onmouseleave="stopContinuousCommand()">Right</button>
+            <button id="coffee-btn" onclick="sendCommand('coffee')">Go to coffee machine</button>
+            <button id="kitchen-btn" onclick="sendCommand('kitchen')">Go to kitchen</button>
+            <button id="place1-btn" onclick="sendCommand('place1')">Go to office place 1</button>
+            <button id="dock-btn" onclick="sendCommand('dock')">Go back to dock</button>
             <button id="logout-btn">Logout</button>
+        </div>
+        <div class="map-section">
+            <h3>Office Map</h3>
+            <!-- <img src="{{ url_for('static', filename='kontor.jpg') }}" alt="Mitt kontor" style="max-width: 100%; height: auto;"> -->
         </div>
     </div>
     <script src="{{ url_for('static', filename='control.js') }}"></script>
