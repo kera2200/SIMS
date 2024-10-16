@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Control Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="menu-container">
+        <h2>Welcome to the Robot Control Panel</h2>
+        <div class="menu-options">
+            <button onclick="navigateTo('/control')">Run Programs</button>
+            <button onclick="navigateTo('/map_new_area')">Map a New Area</button>
+            <button onclick="navigateTo('/view_existing_map')">View Existing Map</button>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </div>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+    </script>
+    <script src="{{ url_for('static', filename='control.js') }}"></script>
+</body>
+</html>

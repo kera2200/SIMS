@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Existing Map</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="map-container">
+        <h2>Office Map</h2>
+        <img src="{{ url_for('static', filename='kontor.png') }}" alt="Mitt kontor" style="max-width: 100%; height: auto;">
+        <button id="GoBack-btn" onclick="navigateTo('/menu')">Go Back To Menu</button>
+    </div>
+    <script src="{{ url_for('static', filename='control.js') }}"></script>
+</body>
+</html>

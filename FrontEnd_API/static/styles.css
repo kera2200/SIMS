@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #66502a;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container, .control-container, .menu-container, .map-container {
+    background-color: #0b2027; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: #f6f1d1; 
+}
+
+h3 {
+    text-align: center;
+    color: #f6f1d1; 
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #cfd7c7; 
+}
+
+input[type="text"], input[type="password"], button {
+    width: 100%; /* Make input and buttons the same width */
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #70a9a1; /* Medium shade for input borders */
+    background-color: #cfd7c7; /* Light-medium color for inputs */
+    color: #0b2027; /* Darker text color for contrast */
+    box-sizing: border-box; /* Ensures padding and borders are included in the total width */
+}
+
+button {
+    background-color: #40798c; 
+    color: #f6f1d1; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #70a9a1; 
+}
+
+
+.command-section {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.map-section {
+    margin-top: 20px;
+}
+
+
+.menu-options button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #70a9a1;
+    background-color: #40798c;
+    color: #f6f1d1;
+    cursor: pointer;
+}
+
+.menu-options button:hover {
+    background-color: #70a9a1;
+}
+
+#error-message {
+    color: #40798c; /* Error message in the medium-dark color */
+    text-align: center;
+}

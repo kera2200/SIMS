@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map a New Area</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="map-container">
+        <h2>Map a New Area</h2>
+        <!-- Add content for mapping a new area here -->
+        <button id="StartMapping-btn" onclick="navigateTo('/menu')">Start Mapping</button>
+        <button id="GoBack-btn" onclick="navigateTo('/menu')">Go Back To Menu</button>
+    </div>
+    <script src="{{ url_for('static', filename='control.js') }}"></script>
+</body>
+</html>
